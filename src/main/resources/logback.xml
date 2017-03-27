@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="1 seconds">
+	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+	<resetJUL>true</resetJUL>
+	</contextListener>
+	<jmxConfigurator/>
+	<property name="DyBom_spring" value="DyBom_spring" />   
+    <contextName>${DyBom_spring}</contextName>  
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>logbak: %d{HH:mm:ss} %logger{36} -%msg%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="org.springframework" level="ERROR"/> 
+		<root level="info">
+			<appender-ref ref="STDOUT"/>
+		</root>
+</configuration>
